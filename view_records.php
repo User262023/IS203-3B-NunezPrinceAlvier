@@ -97,6 +97,7 @@ $result = mysqli_query($connection, $queryFetch);
                             <th>Last Name</th>
                             <th>Username</th>
                             <th>Email</th>
+                            <th>Action</th> <!-- Add Action Column for Edit -->
                         </tr>
                     </thead>
                     <tbody>
@@ -110,10 +111,11 @@ $result = mysqli_query($connection, $queryFetch);
                                         <td>{$row['LastName']}</td>
                                         <td>{$row['Username']}</td>
                                         <td>{$row['Email']}</td>
+                                        <td><a href='edit.php?id={$row['ID']}' class='btn btn-warning btn-sm'>Edit</a></td> <!-- Edit Button -->
                                       </tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='6' class='text-center'>No records found</td></tr>";
+                            echo "<tr><td colspan='7' class='text-center'>No records found</td></tr>"; // Updated colspan
                         }
                         ?>
                     </tbody>
