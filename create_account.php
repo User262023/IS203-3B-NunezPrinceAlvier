@@ -133,6 +133,10 @@ mysqli_close($connection);
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="showPassword">
+                                <label class="form-check-label" for="showPassword">Show Password</label>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block" name="create">Create Account</button>
                     </form>
@@ -142,7 +146,14 @@ mysqli_close($connection);
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript to toggle password visibility
+        document.getElementById('showPassword').addEventListener('change', function() {
+            var passwordInput = document.getElementById('password');
+            passwordInput.type = this.checked ? 'text' : 'password';
+        });
+    </script>
 </body>
 </html>
